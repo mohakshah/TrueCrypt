@@ -178,15 +178,15 @@ ifeq "$(shell uname -s)" "Darwin"
 	PLATFORM := MacOSX
 	APPNAME := TrueCrypt
 
-	MPPREFIX := /opt/local
+	BREW_PREFIX := "$(shell brew --prefix)"
 
-	PKG_CONFIG_PATH := $(MPPREFIX)/lib/pkgconfig
+	PKG_CONFIG_PATH := $(BREW_PREFIX)/lib/pkgconfig
 	CC := gcc
 	CXX := g++
-	AS := ../nasm/nasm-2.11.09rc1/nasm
+	AS := $(BREW_PREFIX)/bin/nasm
 
-	C_CXX_FLAGS += -DTC_UNIX -DTC_BSD -DTC_MACOSX -I./../Pkcs11 -I$(MPPREFIX)/include
-	LFLAGS += -L$(MPPREFIX)/lib
+	C_CXX_FLAGS += -DTC_UNIX -DTC_BSD -DTC_MACOSX -I./../Pkcs11 -I$(BREW_PREFIX)/include
+	LFLAGS += -L$(BREW_PREFIX)/lib
 	WX_CONFIGURE_FLAGS +=
 
 	ASM_OBJ_FORMAT = macho64
