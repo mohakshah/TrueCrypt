@@ -1,0 +1,15 @@
+os: osx
+osx_image: xcode8.3
+language: c++
+
+before_install:
+- brew update
+- brew outdated pkgconfig || brew upgrade pkgconfig
+- brew outdated wxmac || brew upgrade wxmac
+- brew outdated nasm || brew upgrade nasm
+- brew install pkgconfig wxmac nasm
+- brew tap caskroom/cask
+- brew cask install osxfuse
+
+script:
+- make -j4 -f Makefile.osx
