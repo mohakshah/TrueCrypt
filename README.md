@@ -1,6 +1,9 @@
 # TrueCrypt
 [![CI Status](http://img.shields.io/travis/mohakshah/TrueCrypt.svg?style=flat)](https://travis-ci.org/mohakshah/TrueCrypt)
 
+## Warning
+I last updated this repo in October 2017 and would strongly advise not to use it to encrypt any sensitive data. Instead, use alternatives that are well-maintained such as [VeraCrypt](https://www.veracrypt.fr).
+
 ## About
 This repo is an attempt to keep the last version of TrueCrypt (7.1a) buildable on modern versions of macOS.
 Minor modifications to the TrueCrypt 7.1a source code have been made to add support for the following:
